@@ -1,0 +1,308 @@
+
+/* 1. Basic settings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0b1020;
+  color: #f1f5f9;
+  line-height: 1.6;
+}
+
+/* 2. Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  border-bottom: 1px solid #25304a;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #65d8ff;
+}
+
+.header p {
+  color: #aab6cc;
+  font-size: 14px;
+}
+
+/* 3. Main container */
+.container {
+  width: 84%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 4. Welcome section */
+.welcome {
+  padding: 55px 0 30px;
+}
+
+.eyebrow {
+  color: #65d8ff;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.welcome h1 {
+  font-size: clamp(36px, 6vw, 54px);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.welcome h1 span {
+  color: #65d8ff;
+}
+
+.welcome > p:last-child {
+  color: #aab6cc;
+}
+
+/* 5. Statistics cards */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 20px 0 35px;
+}
+
+.stat-card {
+  background: #141d32;
+  border: 1px solid #293650;
+  padding: 22px;
+  border-radius: 12px;
+}
+
+.stat-card p {
+  color: #aab6cc;
+  font-size: 14px;
+}
+
+.stat-card h2 {
+  font-size: 32px;
+  color: #65d8ff;
+  margin-top: 6px;
+}
+
+/* 6. Task sections */
+.task-section {
+  background: #111a2d;
+  border: 1px solid #293650;
+  padding: 25px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+}
+
+.task-section h2 {
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+/* 7. Form fields */
+#taskForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#taskForm label {
+  color: #cbd5e1;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 7px;
+  border: 1px solid #35435e;
+  background: #0b1020;
+  color: #f1f5f9;
+  font: inherit;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #65d8ff;
+  outline-offset: 1px;
+}
+
+.add-button {
+  margin-top: 12px;
+  padding: 13px;
+  border: none;
+  border-radius: 7px;
+  background: #65d8ff;
+  color: #07101f;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background: #a0e8ff;
+}
+
+/* 8. Task list heading */
+.task-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.task-heading h2 {
+  margin-bottom: 0;
+}
+
+.task-heading select {
+  max-width: 165px;
+}
+
+/* 9. Individual tasks */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #293650;
+  border-radius: 9px;
+  background: #0b1325;
+}
+
+.task-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: #65d8ff;
+  cursor: pointer;
+}
+
+.task-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-info h3 {
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.task-info p {
+  font-size: 12px;
+  color: #aab6cc;
+  margin-top: 4px;
+}
+
+.task-item.completed .task-info h3 {
+  text-decoration: line-through;
+  color: #8492a8;
+}
+
+.delete-button {
+  border: 1px solid #563747;
+  background: #291724;
+  color: #ff9cae;
+  border-radius: 6px;
+  padding: 7px 10px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: #482033;
+}
+
+.empty-message {
+  color: #aab6cc;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+/* 10. Footer */
+footer {
+  text-align: center;
+  color: #8795ad;
+  font-size: 13px;
+  padding: 28px 15px;
+  border-top: 1px solid #25304a;
+  margin-top: 35px;
+}
+
+/* 11. Mobile layout */
+@media (max-width: 600px) {
+  .header {
+    padding: 18px 6%;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .header p {
+    font-size: 12px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .stats {
+    gap: 9px;
+  }
+
+  .stat-card {
+    padding: 13px 10px;
+  }
+
+  .stat-card p {
+    font-size: 12px;
+  }
+
+  .stat-card h2 {
+    font-size: 25px;
+  }
+
+  .task-section {
+    padding: 17px;
+  }
+
+  .task-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .task-heading select {
+    max-width: 100%;
+  }
+
+  .task-item {
+    padding: 12px 9px;
+    gap: 8px;
+  }
+
+  .delete-button {
+    padding: 6px;
+    font-size: 12px;
+  }
+}
