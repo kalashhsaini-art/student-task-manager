@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyTask | Student Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="#" class="logo">Study<span>Task.</span></a>
+    <p>Your study life, organized.</p>
+  </header>
+
+  <main class="container">
+
+    <section class="welcome">
+      <p class="eyebrow">YOUR PERSONAL STUDY SPACE</p>
+      <h1>Get things <span>done.</span></h1>
+      <p>One task at a time. You've got this!</p>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card">
+        <p>Total Tasks</p>
+        <h2 id="totalTasks">0</h2>
+      </div>
+      <div class="stat-card">
+        <p>Completed</p>
+        <h2 id="completedTasks">0</h2>
+      </div>
+      <div class="stat-card">
+        <p>Pending</p>
+        <h2 id="pendingTasks">0</h2>
+      </div>
+    </section>
+
+    <section class="task-section">
+      <h2>Add a new task</h2>
+
+      <form id="taskForm">
+        <label for="taskInput">Task name</label>
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="e.g. Complete DBMS assignment"
+          required
+        >
+
+        <label for="taskDate">Due date</label>
+        <input type="date" id="taskDate" required>
+
+        <label for="taskCategory">Category</label>
+        <select id="taskCategory">
+          <option>Assignment</option>
+          <option>Study</option>
+          <option>Exam Preparation</option>
+          <option>Personal</option>
+        </select>
+
+        <button type="submit" class="add-button">+ Add Task</button>
+      </form>
+    </section>
+
+    <section class="task-section">
+      <div class="task-heading">
+        <h2>My tasks</h2>
+        <select id="filterTasks" aria-label="Filter tasks">
+          <option value="all">All tasks</option>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+
+      <div id="taskList" class="task-list"></div>
+
+      <p id="emptyMessage" class="empty-message">
+        No tasks yet. Add your first task above!
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Built with ☕ and a little bit of code.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
